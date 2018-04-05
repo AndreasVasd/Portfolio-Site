@@ -1,3 +1,43 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+        
+        require 'vendor/autoload.php';
+
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
+
+        
+        if(isset($_POST['email'])) {
+            if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                //Show the error message to the user(not valid email)//
+                
+            } 
+            else //the case of valid email//
+            {
+                $mail = new PHPMailer(true);
+                $mail->setFrom("andreas_vasdekis@windowslive.com", "Andreas Vasdekis");
+                $mail->addAddress($_POST['email'], $_POST['name'], $_POST['surname']);
+                $mail->isHTML(TRUE);
+                $mail->Subject ="Email subject";
+                $mail->Body = "<h3>".$_POST['message']."</h3>";
+                
+                if ($mail->send()) {
+                    echo "email sent";
+                    
+                } else 
+                {
+                    echo "error";
+                }
+            }
+        }
+        
+
+
+        ?>       
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,37 +140,7 @@
         
         
        <!-- Form -->
-        <?php
         
-        require_once 'vendor/autoload.php';
-        
-        if(isset($_POST['email'])) {
-            if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                //Show the error message to the user(not valid email)//
-                
-            } 
-            else //the case of valid email//
-            {
-                $mail = new PHPMailer();
-                $mail->setFrom("andreas_vasdekis@windowslive.com", "Andreas Vasdekis");
-                $mail->addAddress($_POST['email'], $_POST['name'], $_POST['surname']);
-                $mail->isHTML(TRUE);
-                $mail->Subject ="Email subject";
-                $mail->Body = "<h3>".$_POST['message']."</h3>";
-                
-                if ($mail->send()) {
-                    echo "email sent";
-                    
-                } else 
-                {
-                    echo "error";
-                }
-            }
-        }
-        
-
-
-        ?>       
         
         <div class="my_form">
         <div class="container">
