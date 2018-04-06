@@ -1,53 +1,5 @@
-<?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-//handling form submission//
-if (array_key_exists('email', $_POST)) {
-    date_default_timezone_set('Etc/UTC');
-
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-try {
-    //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp-mail.outlook.com';                // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '******';                            // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
-    
-        
-                
-            
-        
-                
-                $mail = new PHPMailer(true);             // Passing `true` enables exceptions
-                $mail->setFrom('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');
-                $mail->addAddress('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis'); // php variable ? //
-                $mail->isHTML(TRUE);
-                $mail->Subject ='Email subject';
-                $mail->Body = 'This is the body in plain text for non-HTML mail clients';
-                
-                $mail->send(); 
-                    echo "email sent";
-                    }  catch (Exception $e) {
-                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}
-    }
-                
-        
-
-
-        ?>       
-
+ 
+               
 
 <!DOCTYPE html>
 <html lang="en">
@@ -153,6 +105,7 @@ try {
        <!-- Form -->
         
         
+        
         <div class="my_form">
         <div class="container">
 
@@ -210,12 +163,70 @@ try {
             </div>
             <!-- Send button -->
             <div class="col-sm-12">
-                <input type="submit" class="btn btn-primary btn-send" value="Send message">
+                <input type="submit" class="btn btn-primary btn-send" name="send" value="Send message">
             </div>
         </div>
+        
+        <!--PHP script -->
+        
+        <?php
+            // Import PHPMailer classes into the global namespace
+            // These must be at the top of your script, not inside a function
+            use PHPMailer\PHPMailer\PHPMailer;
+            use PHPMailer\PHPMailer\Exception;
+
+            //handling form submission//
+            if (array_key_exists('email', $_POST)) {
+                date_default_timezone_set('Etc/UTC'); 
+
+
+            //Load Composer's autoloader
+            require 'vendor/autoload.php';
+
+            $mail = new PHPMailer();                              // Passing `true` enables exceptions
+            try {
+                //Server settings
+                /*$mail->SMTPDebug = 2; */                                // Enable verbose debug output
+                $mail->isSMTP();                                      // Set mailer to use SMTP
+                $mail->Host = 'smtp-mail.outlook.com';                        // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
+                $mail->Password = 'Parlapip@@s';                       // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;                                    // TCP port to connect to
+
+    
+   
+                
+           
+
+                
+                
+                $mail->setFrom('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');
+                $mail->addAddress('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');         
+                $mail->Subject = 'New Form Submission';
+                $mail->isHTML(TRUE);
+                $mail->Body = 'You have received a new message from the user';
+               
+                
+                $mail->send(); 
+                echo "email sent";
+    
+                    }  catch (Exception $e) {
+                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+    }
+                
+        
+
+
+        ?>  
+        
         <div class="row">
             <div class="col-sm-12">
                 <p class="text-muted"><strong>*</strong> These fields are required. 
+                    
+                    
             </div>
         </div>
     </div>
