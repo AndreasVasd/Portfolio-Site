@@ -1,6 +1,3 @@
- 
-               
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,7 +114,7 @@
 
     <div class="messages"></div> <!-- display the success or error message after sending the form via AJAX -->
 
-    <div class="controls">
+   <div class="controls"> 
 
         <!-- Standard Bootstrap forms markup is used - rows, columns, form groups. Form groups are Bootstrap helpers that take care of the appropriate vertical spacing in the form. -->
         <div class="row">
@@ -169,58 +166,67 @@
         
         <!--PHP script -->
         
-        <?php
-            // Import PHPMailer classes into the global namespace
-            // These must be at the top of your script, not inside a function
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\Exception;
+<?php
+/**
+ * This example shows how to handle a simple contact form.
+ */
+//Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+$msg = '';
 
-            //handling form submission//
-            if (array_key_exists('email', $_POST)) {
-                date_default_timezone_set('Etc/UTC'); 
-
-
-            //Load Composer's autoloader
+       //Don't run this unless we're handling a form submission
+if (array_key_exists('email', $_POST)) {
+    date_default_timezone_set('Etc/UTC');
             require 'vendor/autoload.php';
-
-            $mail = new PHPMailer();                              // Passing `true` enables exceptions
-            try {
-                //Server settings
-                /*$mail->SMTPDebug = 2; */                                // Enable verbose debug output
-                $mail->isSMTP();                                      // Set mailer to use SMTP
-                $mail->Host = 'smtp-mail.outlook.com';                        // Specify main and backup SMTP servers
-                $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-                $mail->Password = '***';                       // SMTP password
-                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 587;                                    // TCP port to connect to
-
     
-   
-                
-           
-
-                
-                
-                $mail->setFrom('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');
-                $mail->addAddress('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');         
-                $mail->Subject = 'New Form Submission';
-                $mail->isHTML(TRUE);
-                $mail->Body = 'You have received a new message from the user';
-               
-                
-                $mail->send(); 
-                echo "email sent";
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
     
-                    }  catch (Exception $e) {
-                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}
-    }
-                
+    //Tell PHPMailer to use SMTP - requires a local mail server
+    //Faster and safer than using mail()
+    $mail->isSMTP();
+    $mail->Host = 'smtp-mail.outlook.com';
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+    
+    //Use a fixed address in your own domain as the from address
+    //**DO NOT** use the submitter's address here as it will be forgery
+    //and will cause your messages to fail SPF checks
+    $mail->setFrom('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');
+    //Send the message to yourself, or whoever should receive contact for submissions
+    $mail->addAddress('andreas_vasdekis@windowslive.com', 'Andreas Vasdekis');
+    //Put the submitter's address in a reply-to header
+    //This will fail if the address provided is invalid,
+    //in which case we should ignore the whole request
+    if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
+        $mail->Subject = 'New Form Submission';
+        //Keep it simple - don't use HTML
+        $mail->isHTML(false);
+        //Build a simple message body
+        $mail->Body = <<<EOT
+Email: {$_POST['email']}
+Name: {$_POST['name']}
+Surname: {$_POST['surname']}
+Phone: {$_POST['phone']}
+Message: {$_POST['message']}
+EOT;
         
-
-
-        ?>  
+       //Send the message, check for errors
+        if (!$mail->send()) {
+            //The reason for failing to send will be in $mail->ErrorInfo
+            //but you shouldn't display errors to users - process the error, log it on your server.
+          echo  $msg = 'Sorry, something went wrong. Please try again later.';
+        } else {
+            echo $msg = 'Message sent! Thanks for contacting us.';
+        }
+        } else {
+           echo $msg = 'Invalid email address, message ignored.'; 
+        }
+}
+?>
         
         <div class="row">
             <div class="col-sm-12">
@@ -229,7 +235,7 @@
                     
             </div>
         </div>
-    </div>
+   </div> 
                         
 
 </form>
