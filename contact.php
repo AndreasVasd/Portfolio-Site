@@ -44,7 +44,7 @@
 
         
          <!-- Bootstrap class / δημιουργία του γκρι πλασίου στο header(και γενικά τρόπος δημιουργίας header-menu)-->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
         <!-- Δημιουργία του icon όταν μικραίνει η οθόνη-3 span classes γιατί θέλω τις τρεις γραμμούλες -->
@@ -188,7 +188,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '***';                       // SMTP password
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
