@@ -42,6 +42,13 @@
     </head>
     <body>
         
+        <!--Loader-->
+        <div class="preloader"></div>
+                 
+        <!-- Return to top arrow -->
+        <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i></a>
+
+        
 
          <!-- Bootstrap class / δημιουργία του γκρι πλασίου στο header(και γενικά τρόπος δημιουργίας header-menu)-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -231,6 +238,22 @@
         </div>
     </footer>
         
+        <!-- Preloader script -->
+        
+        <script>
+             	
+	$(window).on("load", function () {
+        $(".preloader").delay(350).fadeOut(600, function ()
+{
+            $(this).remove();
+        });
+		
+	});
+        </script>
+        
+        
+        <!-- Return to top script -->
+        <script type="text/javascript" src="ret_to_top.js"></script> 
 
 
     

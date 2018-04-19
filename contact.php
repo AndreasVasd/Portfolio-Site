@@ -41,6 +41,13 @@
     
     </head>
     <body background="Images/contact.jpg">
+        
+        <!--Loader-->
+        <div class="preloader"></div>
+                 
+        <!-- Return to top arrow -->
+        <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i></a>
+
 
         
          <!-- Bootstrap class / δημιουργία του γκρι πλασίου στο header(και γενικά τρόπος δημιουργίας header-menu)-->
@@ -188,7 +195,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '***';                       // SMTP password
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
@@ -290,6 +297,22 @@ EOT;
             <p>© 2018 Copyright Text </p>
         </div>
     </footer>
+            
+        <!-- Preloader script -->
+        <script>
+             	
+	$(window).on("load", function () {
+        $(".preloader").delay(350).fadeOut(600, function ()
+{
+            $(this).remove();
+        });
+		
+	});
+        </script>
+                
+        <!-- Return to top script -->
+        <script type="text/javascript" src="ret_to_top.js"></script> 
+
            
     
     </body>
