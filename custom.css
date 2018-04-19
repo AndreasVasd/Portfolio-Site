@@ -115,10 +115,8 @@
 .jumbotron-content{
     color: black;
     font-family: 'Cormorant Garamond';
-}
 
-.jumbotron-content h2{
-    font-size: 34px;
+    font-size: 44px;
     border-bottom: #0176b5 solid 2px;
     padding-bottom: 10px;
 }
@@ -491,12 +489,12 @@ textarea#form_message.form-control {
     -moz-border-radius: 35px;
     border-radius: 35px;
     display: none;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s linear; /* chrome support */
+    -moz-transition: all 0.3s ease; /* firefox support */
     -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; /* opera support */
     transition: all 0.3s ease;
-    z-index: 100;
+    z-index: 100; /* to avoid overlapping of elements */
 }
 #return-to-top i {
     color: #fff;
