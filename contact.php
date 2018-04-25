@@ -72,7 +72,7 @@
           <li class="active"><a href="home.html"><i class="fa fa-home color-home"></i></a></li>
           
         <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="http://localhost/Portfolio-Site/Blog/wordpress/">Blog</a></li>
         <li><a href="contact.php">Contact</a></li>
         
       
@@ -195,7 +195,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '***';                       // SMTP password
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
