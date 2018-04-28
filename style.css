@@ -1,0 +1,127 @@
+/*
+ Theme Name:   Clickright-Lite Child
+ Theme URI:    http://example.com/clickright-lite-child/
+ Description:  Clickright-Lite Child Theme
+ Author:       AV
+ Author URI:   http://andreas.com
+ Template:     clickright-lite
+ Version:      2.7.8
+*/
+@import url("../clickright-lite/style.css");
+
+
+
+/* margin of Hello World */
+.clickright-lite-grid li .item h2{
+    margin-top: 40px;
+}
+
+ .container.cl_sidebar {
+     overflow:hidden;
+     background-image: url(Images/contact.jpg);
+     margin-bottom: 50px;
+     margin-top: -150px;
+}
+
+
+
+/* CSS */
+
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      font-size: 17px;
+      font-family: 'Open Sans';
+      background-color: #282828;
+}
+
+/*Ρυθμίσεις για τα link του menu*/
+
+.navbar a{
+    border-bottom: 2px solid transparent;/*η γραμμούλα κάτω από τα links */
+    height: 48px; /* το ύψος των links...για να μη χαλάει το hover στο resizing */
+}
+
+.navbar a:hover{
+    border-bottom: 2px solid #00539f;
+}
+
+.navbar a.active{
+    border-bottom: 2px solid #00539f;
+}
+
+/*Ρυθμίσεις για το search button*/
+
+.navbar input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+/*Ρυθμίσεις για το εικονίδιο του search button*/
+
+.navbar button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;/*για να γίνεται χεράκι με το hover*/
+   
+}
+
+.navbar button:hover {
+  background: #ccc;
+}
+
+
+/*Ρυθμίσεις για τα social buttons*/
+
+.color-github{
+    color:#00aced;
+    padding: 2% 4% 2% 4%;
+}
+.color-linkedin{
+    color:#0176b5;
+    padding: 2% 4% 2% 4%;
+}
+.color-twitter{
+    color:#00539f;
+    padding: 2% 4% 2% 4%;
+}
+
+/* Τα tooltips για τα social buttons */
+#tooltip1{
+    color: white;
+}
+
+#tooltip1:hover{
+    text-decoration: none;
+}
+
+#tooltip2{
+    color: white;
+}
+
+#tooltip2:hover{
+    text-decoration: none;
+}
+
+#tooltip3{
+    color: white;
+}
+
+#tooltip3:hover{
+    text-decoration: none;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 280px; 
+   /* margin-bottom: -50px; */
+}
+
