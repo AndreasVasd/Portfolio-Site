@@ -195,7 +195,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '***';                       // SMTP password
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
@@ -280,9 +280,9 @@ EOT;
                     <h5>Friendly Sites</h5>
                     <hr class="grammi" style="width: 60px;">
                     <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a target="_blank" href="https://www.css-weekly.com">www.css-weekly.com</a></li>
+                        <li><a target="_blank" href="https://www.tutorialzine.com">www.tutorialzine.com</a></li>
+                        <li><a target="_blank" href="https://www.1stwebdesigner.com">www.1stwebdesigner.com</a></li>
                     </ul>
                 </div>
                
