@@ -10,7 +10,6 @@
  * @since 1.0
  * @version 1.0
  */
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -60,12 +59,19 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body                 
+ <?php body_class(); ?>
+    
+      >
+    
     <div class="content">
+
+        
 </div> 
 
-  
 
+
+        
  <nav class="navbar navbar-inverse navbar-fixed-top"> <!-- προσθέτοντας fixed-top εμφανίζεται όπως πρέπει το collapsed menu -->
     <div class="container-fluid">
       <div class="navbar-header">
@@ -107,7 +113,8 @@
     </div>
   </nav>
            <!-- <div id="brand">   -->
-
+    
+   
                 <?php the_custom_logo(); ?>    
 
                 <?php if ( is_front_page() ) : ?>
@@ -148,5 +155,7 @@
    <!-- nav -->
 
     <div id="bigcontainer">
+        
+
         
        
