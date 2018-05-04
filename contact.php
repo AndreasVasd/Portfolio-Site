@@ -195,7 +195,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = 'Parlapip@@s';                       // SMTP password
+    $mail->Password = '***';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
