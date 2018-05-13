@@ -130,7 +130,7 @@
     height: 60px;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 35px;
+    margin-top: 20px;
     font-size: 45px;
     font-family: 'Open Sans';
 }
@@ -138,11 +138,29 @@
 #par p {
     height: 60px;
     text-align: center;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     font-size: 20px;
     font-family: 'Cormorant Garamond';
     letter-spacing: 3px; /* αραιά γράμματα */
 }
+
+/*Using flexbox to display in the center!!! */
+.fa-caret-down{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 3vh; /* how much height you want to cover */
+     margin-bottom: 30px;
+     margin-top: -10px;
+     font-size: 45px;
+     color: black;
+     opacity: 0.6;
+     cursor: pointer;
+    
+}
+
+
+
 
 /*  Skills-boxes */
 
