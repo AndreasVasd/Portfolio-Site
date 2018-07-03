@@ -149,14 +149,13 @@
      display: flex;
      align-items: center;
      justify-content: center;
-     height: 3vh; /* how much height you want to cover */
+     height: 1vh; /* how much height you want to cover */
      margin-bottom: 30px;
      margin-top: -10px;
      font-size: 45px;
      color: black;
      opacity: 0.6;
      cursor: pointer;
-    
 }
 
 
@@ -173,7 +172,7 @@
 
 #boxes .box{
     background: #F0F0F0; 
-    overflow: hidden;
+    overflow: visible;
     color: black;
     padding: 0 10px;
     margin-top: 80px;
@@ -181,7 +180,7 @@
 }
 
 /* Κεντράρισμα headings του skill section */
-#skill_headings{
+#skill_headings {
     text-align: center;
     font-family: 'Open Sans';
 }
@@ -344,7 +343,6 @@ body{
 	-webkit-flex: 1 0 auto;
 	min-height: 200px;
     background: #F0F0F0;
-
 }
 
 
@@ -385,7 +383,7 @@ body{
 /* Μορφοποίηση του heading About me */
 #heading_about h3{
     margin-top: 60px;
-    margin-left: 150px;
+    margin-left: 110px;
     font-family: 'Open Sans';
     font-size: 30px;
     font-style: italic;
@@ -396,7 +394,7 @@ body{
 .img-custom {
     margin-top: 25px;
     margin-bottom: 100px;
-    margin-left: 130px;
+    margin-left: 80px;
     border-radius: 20%;
     width: 230px; /* ορίζω συγκεκριμένο πλάτος στη φωτό */
     cursor: pointer;
@@ -408,12 +406,18 @@ body{
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
+/* Photo disappears in devices less than 362px */
+@media screen and (max-width: 328px){
+	.img-custom {
+        display: none;	}
+}
+
 
 
 /* Η παράγραφος για εμένα */
 #paragraph_about p {
     margin-top: 70px;
-    margin-left: 90px;
+    margin-left: 60px;
     margin-right: 100px; 
     text-align: justify; 
     font-family: 'Open Sans';

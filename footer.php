@@ -1,8 +1,2 @@
-
-
-	<!-- END CONTAINER -->
-	</div>
-
-	
-	
+<? php wp_footer(); ?>
 	

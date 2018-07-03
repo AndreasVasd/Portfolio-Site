@@ -195,7 +195,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'andreas_vasdekis@windowslive.com';  // SMTP username
-    $mail->Password = '***';                       // SMTP password
+    $mail->Password = 'Parlapip@@s';                       // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
     
@@ -237,7 +237,7 @@ EOT;
         
         <div class="row">
             <div class="col-sm-12">
-                <p class="text-muted"><strong>*</strong> These fields are required. 
+                <p class="text-muted"><strong>*</strong> These fields are required. </p>
                     
                     
             </div>
@@ -271,7 +271,7 @@ EOT;
                     <hr class="grammi" style="width: 60px;">
                     <ul class="fa-ul">
                        
-                       <li><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Website: <a href="home.html">www.andreas.com</a></li>
+                       <li><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Website: <a href="home.html">www.avasdekis.com</a></li>
                         <li><i class="fa fa-envelope fa-fw" aria-hidden="true"></i>&nbsp;Email: andreas_vasdekis@windowslive.com</li>
                         <li><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>&nbsp;Phone: +30 6980794725</li>
                     </ul>
