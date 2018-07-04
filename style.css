@@ -134,13 +134,20 @@
      line-height: 1.45em;
 }
 
-/* Modify margin-right when we open the post */
+
 .post {
      margin-bottom:30px;
 }
  .single .post {
      margin-bottom:30px;
      margin-right: 50px;
+}
+
+/* Modify margin-right when we open the post in screens less than 784px */
+@media screen and (max-width: 778px){
+	.single .post {
+        margin-right: 350px;
+	}
 }
 
 
@@ -166,8 +173,13 @@
      margin-right:0px;
      float:left;
      background:#fff;
-     padding: 30px 30px 30px 0px;
+     padding: 30px 60px 30px 0px;
 }
+
+
+
+
+
  #sidebar {
      width:300px;
      float:right;
@@ -206,11 +218,20 @@
     margin-right: 50px;
 }
 
-/*.container cl_sidebar{
-    margin-right: 50px;
-}*/
 
-/* Γιατί δεν εμφανίζεται σωστά όταν ανοίγω το post για διάβασμα */
-.post-entry p{
-    padding-right: 150px;
-}*/
+/*Page Title when I click Category doesn'y show anything */
+.archive-box h1 {
+     display: none;
+}
+
+/* Hide some bullshit in Archieves */
+.archive-box {
+     display: none;
+}
+
+/*Hide Archieves*/
+.post-entry ul, .post-entry ol {
+     padding-left:45px;
+     margin-bottom:20px;
+}
+
