@@ -12,7 +12,7 @@
 
 .navbar a{
     border-bottom: 2px solid transparent;/*η γραμμούλα κάτω από τα links */
-    height: 48px; /* το ύψος των links...για να μη χαλάει το hover στο resizing */
+    /*height: 48px; /* το ύψος των links...για να μη χαλάει το hover στο resizing */
 }
 
 .navbar a:hover{
@@ -27,7 +27,7 @@
 
 .navbar input[type=text] {
   padding: 6px;
-  margin-top: 8px;
+  margin-top: 8px; /* πόσο απέχει όλο το div του search bar από την κορυφή */
   font-size: 17px;
   border: none;
 }
@@ -104,7 +104,7 @@
 
 .jumbotron [class*="col-"] {
     padding-top:15px; /* απόσταση του κειμένου μέσα στο jumbotron από το σημείου που ξεκινάει το jumbotron*/
-    padding-bottom: 155px;
+    /*padding-bottom: 155px;*/
     background-color: #eee;
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba (86,61,124,.2);
@@ -115,7 +115,6 @@
 .jumbotron-content{
     color: black;
     font-family: 'Cormorant Garamond';
-
     font-size: 44px;
     border-bottom: #0176b5 solid 2px;
     padding-bottom: 10px;
@@ -144,7 +143,14 @@
     letter-spacing: 3px; /* αραιά γράμματα */
 }
 
-/*Using flexbox to display in the center!!! */
+
+/*Using flexbox to display in the center!!!...Before the Flexbox Layout module, there were four layout modes:
+    Block, for sections in a webpage
+    Inline, for text
+    Table, for two-dimensional table data
+    Positioned, for explicit position of an element
+ */
+
 .fa-caret-down{
      display: flex;
      align-items: center;
@@ -174,27 +180,36 @@
     background: #F0F0F0; 
     overflow: visible;
     color: black;
-    padding: 0 10px;
+    padding: 0 10px; 
     margin-top: 80px;
     font-size: 120%;
 }
 
 /* Κεντράρισμα headings του skill section */
 #skill_headings {
-    text-align: center;
+  /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Open Sans';
 }
 
 /* Κεντράρισμα παραγράφων του skill section */
 #skill_par{
-    text-align: center;
+    /*text-align: center; /*αντί αυτού χρησιμοποιώ flexbox για κεντράρισμα */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Open Sans';
     color: #808080;
 }
 
 /* Font awesome icons του skill section */
 .fa-code{
-    display: block; /* για responsive κεντράρισμα */
+    /*display: block; /* για responsive κεντράρισμα */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 17%;
@@ -204,7 +219,10 @@
 }
 
 .fa-css3 {
-    display: block;
+    /*display: block;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 17%;
@@ -214,7 +232,10 @@
 }
 
 .fa-desktop {
-    display: block;
+    /*display: block;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
@@ -247,7 +268,7 @@
 #myFooter ul{
 	list-style-type: none;
     padding-left: 0;
-    line-height: 1.7;
+    line-height: 2.3;
 }
 
 /* Οι τίτλοι Get Started κλπ.. */
@@ -258,14 +279,15 @@
     margin-top: 30px;
 }
 
-/* Όλα τα links στο footer */
+/* Όλα τα links στο footer(εκτός των social) */
 #myFooter a{
 	color:#d2d1d1;
 	text-decoration: none;
     border-bottom: 2px solid transparent;
+    transition: 1.0s;
 }
 
-/* Το hover στα links του footer */
+/* Το hover στα links του footer(εκτός των social) */
 #myFooter a:hover, #myFooter a:focus{
 	text-decoration: none;
 	color:white;
@@ -288,7 +310,7 @@
     margin-left: 5px;
     color: #0176b5;
     padding: 10px;
-    transition: 0.2s;
+    transition: 1.0s;
 }
 
 #myFooter .social-networks a:hover{
