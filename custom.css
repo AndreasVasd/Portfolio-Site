@@ -351,24 +351,25 @@ html{
 	height: 100% !important;
 }
 
+/* Also for sticky footer */
 body{
     display: flex;
     display: -webkit-flex;
-    flex-direction: column;
+    flex-direction: column;/* display project at column */
     -webkit-flex-direction: column;
     height: 100%;
 }
 
 /* να ψάξω τι είναι το flex */
-.content{
+/*.content{
 	flex: 1 0 auto;
 	-webkit-flex: 1 0 auto;
 	min-height: 200px;
     background: #F0F0F0;
-}
+}*/
 
 
-
+/* Sticky footer */
 #myFooter{
 	flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
@@ -396,9 +397,12 @@ body{
 #about_me {
     background: #F0F0F0;
     margin-top: 50px;
-    position:   relative; 
+    /*position:   relative; */
+    /* flexbox is not really neccesary */
+    display: flex;
     flex: 1 0 auto;
-	-webkit-flex: 1 0 auto;
+	-webkit-flex: 1 0 auto; /* specifications for chrome*/
+    -moz-flex: 1 0 auto; /* specifications for firefox*/
 	min-height: 300px;
 }
 
@@ -410,6 +414,11 @@ body{
     font-size: 30px;
     font-style: italic;
     letter-spacing: 3px;
+    /* flexbox is not really necessary */
+    display: flex;
+    justify-content: flex-start;
+    -webkit-flex: 1 0 auto; /* specifications for chrome*/
+    -moz-flex: 1 0 auto; /* specifications for firefox*/
 }
 
 /* Μορφοποίηση της φωτο μου */
@@ -420,6 +429,10 @@ body{
     border-radius: 20%;
     width: 230px; /* ορίζω συγκεκριμένο πλάτος στη φωτό */
     cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-flex: 1 0 auto; /* specifications for chrome*/
+    -moz-flex: 1 0 auto; /* specifications for firefox*/
 }
 
 /* Hover effect για τη φωτο */
@@ -446,6 +459,12 @@ body{
     font-size: 20px;
     letter-spacing:2px;
     line-height: 1.8; /* το κενό μεταξύ των γραμμών της παραγράφου */
+    /* flexbox is not really necessary */
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+    -webkit-flex: 1 0 auto; /* specifications for chrome*/
+    -moz-flex: 1 0 auto; /* specifications for firefox*/
 }
 
 /* Contact Page */
@@ -453,7 +472,10 @@ body{
 /* Το Get In Touch */
 #contact h3 {
     height: 60px;
-    text-align: center;
+    /*text-align: center; αντί αυτού χρησιμοποιώ το flexbox για κεντράρισμα */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 40px;
     margin-top: 125px;
     font-size: 50px;
@@ -464,11 +486,17 @@ body{
     font-size: 25px;
     font-family: 'Cormorant Garamond';
     color: #777;
-    text-align: center;
+    text-align: center;/* είναι και σωστά κεντραρισμένη η δεύτερη γραμμή της paragraph */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Το font awesome icon δίπλα απ' το Get In Touch */
 .fa-fw-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3em;
     color: #0176b5;
     font-size: 40px;
